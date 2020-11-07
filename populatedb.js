@@ -207,7 +207,6 @@ function createBookInstances(cb) {
 }
 
 
-
 async.series([
     createGenreAuthors,
     createBooks,
