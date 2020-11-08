@@ -43,5 +43,36 @@ AuthorSchema
   return '/catalog/author/' + this._id;
 });
 
+// Virtual for setting html input type=date
+AuthorSchema
+  .virtual('date_of_birth_html')
+  .get( function(){
+    if( this.date_of_birth ){
+      var dateOfBirth = this.date_of_birth;
+      var year = dateOfBirth.getFullYear() + "";
+      var day = "" + dateOfBirth.getDate();
+      var mon = "" + (dateOfBirth.getMonth() + 1);
+      return year + "-" + day.padStart(2, "0") + "-" + mon.padStart(2, "0");
+    }else{
+      return "";
+    }
+  } );
+
+
+// Virtual for setting html input type=date
+AuthorSchema
+  .virtual('date_of_death_html')
+  .get( function(){
+    if( this.date_of_death ){
+      var dateOfdeath = this.date_of_death;
+      var year = dateOfdeath.getFullYear() + "";
+      var day = "" + dateOfdeath.getDate();
+      var mon = "" + (dateOfdeath.getMonth() + 1);
+      return year + "-" + day.padStart(2, "0") + "-" + mon.padStart(2, "0");
+    }else{
+      return "";
+    }
+  } );
+
 //Export model
 module.exports = mongoose.model('Author', AuthorSchema);
