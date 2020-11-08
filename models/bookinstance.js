@@ -25,5 +25,21 @@ BookInstanceSchema
   return DateTime.fromJSDate(this.due_back).toLocaleString(DateTime.DATE_MED);
 });
 
+
+// Virtual for setting html input type=date
+BookInstanceSchema
+  .virtual('due_back_html')
+  .get( function(){
+    if( this.due_back ){
+      var due_back = this.due_back;
+      var year = due_back.getFullYear() + "";
+      var day = "" + due_back.getDate();
+      var mon = "" + (due_back.getMonth() + 1);
+      return year + "-" + day.padStart(2, "0") + "-" + mon.padStart(2, "0");
+    }else{
+      return "";
+    }
+  } );
+
 //Export model
 module.exports = mongoose.model('BookInstance', BookInstanceSchema);
