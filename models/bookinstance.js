@@ -35,7 +35,7 @@ BookInstanceSchema
       var year = due_back.getFullYear() + "";
       var day = "" + due_back.getDate();
       var mon = "" + (due_back.getMonth() + 1);
-      return year + "-" + day.padStart(2, "0") + "-" + mon.padStart(2, "0");
+      return year + "-" + mon.padStart(2, "0") + "-" + day.padStart(2, "0");
     }else{
       return "";
     }

@@ -52,7 +52,7 @@ AuthorSchema
       var year = dateOfBirth.getFullYear() + "";
       var day = "" + dateOfBirth.getDate();
       var mon = "" + (dateOfBirth.getMonth() + 1);
-      return year + "-" + day.padStart(2, "0") + "-" + mon.padStart(2, "0");
+      return year + "-" + mon.padStart(2, "0") + "-" + day.padStart(2, "0");
     }else{
       return "";
     }
@@ -68,7 +68,7 @@ AuthorSchema
       var year = dateOfdeath.getFullYear() + "";
       var day = "" + dateOfdeath.getDate();
       var mon = "" + (dateOfdeath.getMonth() + 1);
-      return year + "-" + day.padStart(2, "0") + "-" + mon.padStart(2, "0");
+      return year + "-" + mon.padStart(2, "0") + "-" + day.padStart(2, "0");
     }else{
       return "";
     }

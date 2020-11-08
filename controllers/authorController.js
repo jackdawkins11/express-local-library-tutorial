@@ -153,7 +153,6 @@ exports.author_update_get = function (req, res, next) {
             err.status = 404;
             return next(err);
         }
-        console.log( results.author );
         res.render('author_update_form', { title: 'Update Author', author: results.author });
     });
 };
