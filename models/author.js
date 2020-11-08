@@ -24,12 +24,12 @@ AuthorSchema
 .virtual('lifespan')
 .get(function () {
   if( this.date_of_birth ){
-    var dateOfBirthString = DateTime.fromJSDate(this.date_of_birth).toLocaleString(DateTime.DATE_MED);
+    var dateOfBirthString = DateTime.fromJSDate(this.date_of_birth).toUTC().toLocaleString(DateTime.DATE_MED);
   }else{
     var dateOfBirthString = "Unknown";
   }
   if( this.date_of_death ){
-      var dateOfDeathString = DateTime.fromJSDate(this.date_of_death).toLocaleString(DateTime.DATE_MED);
+      var dateOfDeathString = DateTime.fromJSDate(this.date_of_death).toUTC().toLocaleString(DateTime.DATE_MED);
   }else{
       var dateOfDeathString = "";
   }
