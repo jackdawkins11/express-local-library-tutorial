@@ -2,6 +2,9 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
+/*
+  Define the Genre database schema.
+*/
 var GenreSchema = new Schema(
   {
     name: {type: String, required: true, minlength: 3, maxlength: 100}

@@ -6,7 +6,9 @@ const { body,validationResult } = require('express-validator');
 
 var async = require('async');
 
-exports.index = function(req, res) {   
+exports.index = function(req, res) {
+    
+    console.log( "In book index");
     
     async.parallel({
         book_count: function(callback) {
@@ -33,6 +35,8 @@ exports.index = function(req, res) {
 // Display list of all books.
 exports.book_list = function(req, res, next) {
 
+    console.log( "In book list");
+    
     Book.find({}, 'title author')
       .populate('author')
       .exec(function (err, list_books) {
@@ -46,6 +50,8 @@ exports.book_list = function(req, res, next) {
 // Display detail page for a specific book.
 exports.book_detail = function(req, res, next) {
 
+    console.log( "In book detail");
+    
     async.parallel({
         book: function(callback) {
 
@@ -75,6 +81,7 @@ exports.book_detail = function(req, res, next) {
 // Display book create form on GET.
 exports.book_create_get = function(req, res, next) { 
       
+    console.log( "In book create");
     // Get all authors and genres, which we can use for adding to our book.
     async.parallel({
         authors: function(callback) {
@@ -112,6 +119,7 @@ exports.book_create_post = [
 
     // Process request after validation and sanitization.
     (req, res, next) => {
+        console.log( "In book create POST");
         
         // Extract the validation errors from a request.
         const errors = validationResult(req);
@@ -162,6 +170,7 @@ exports.book_create_post = [
 
 // Display Book delete form on GET.
 exports.book_delete_get = function(req, res, next) {
+    console.log( "In book delete get");
 
     async.parallel({
         book: function(callback) {
@@ -183,6 +192,7 @@ exports.book_delete_get = function(req, res, next) {
 
 // Handle Book delete on POST.
 exports.book_delete_post = function(req, res, next) {
+    console.log( "In book delete post");
 
     async.parallel({
         book: function(callback) {
@@ -212,6 +222,7 @@ exports.book_delete_post = function(req, res, next) {
 
 // Display book update form on GET.
 exports.book_update_get = function(req, res, next) {
+    console.log( "In book update get");
 
     // Get book, authors and genres for form.
     async.parallel({
@@ -268,6 +279,8 @@ exports.book_update_post = [
 
     // Process request after validation and sanitization.
     (req, res, next) => {
+    
+        console.log( "In book update post");
 
         // Extract the validation errors from a request.
         const errors = validationResult(req);

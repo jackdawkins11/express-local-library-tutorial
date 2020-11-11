@@ -3,6 +3,9 @@ const { DateTime } = require("luxon");
 
 var Schema = mongoose.Schema;
 
+/*
+  Define the BookInstance database schema
+*/
 var BookInstanceSchema = new Schema(
   {
     book: { type: Schema.Types.ObjectId, ref: 'Book', required: true }, //reference to the associated book

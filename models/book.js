@@ -2,6 +2,9 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
+/*
+  Define the Book database schema
+*/
 var BookSchema = new Schema(
   {
     title: {type: String, required: true},

@@ -3,6 +3,9 @@ const { DateTime } = require("luxon");
 
 var Schema = mongoose.Schema;
 
+/*
+  Define the Author document
+*/
 var AuthorSchema = new Schema(
   {
     first_name: {type: String, required: true, maxlength: 100},
