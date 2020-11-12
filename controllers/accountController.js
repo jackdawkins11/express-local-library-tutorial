@@ -80,10 +80,19 @@ exports.sign_up_post = [
                 if( userExists ){
                     res.render('sign_up', { username: username, errors: [{ msg: "That username is taken." }] });
                 }else{
-                    res.redirect('/Signin');
+                    res.redirect('/auth/Signin');
                 }
             }
         });
 
     }
 ];
+
+exports.sign_out_get = function (req, res, next) {
+    req.session.destroy(function(error){
+        if( error ){
+            console.log( error );
+        }
+    });
+    res.redirect('/auth/Signin');
+};

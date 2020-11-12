@@ -12,6 +12,15 @@ html(lang='en')
     div(class='container-fluid')
       div(class='row')
         div(class='col-sm-2')
+          ul(class='sidebar-nav')
+            li 
+              a(href='/auth/Signout') Sign out
+            li 
+              a(href='/catalog') Catalog
+            li 
+              a(href='/users') Users
+      div(class='row')
+        div(class='col-sm-2')
           block sidebar
             ul(class='sidebar-nav')
               li 
