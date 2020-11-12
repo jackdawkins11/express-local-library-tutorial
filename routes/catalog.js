@@ -6,11 +6,14 @@ var book_controller = require('../controllers/bookController');
 var author_controller = require('../controllers/authorController');
 var genre_controller = require('../controllers/genreController');
 var book_instance_controller = require('../controllers/bookinstanceController');
-const { nextTick } = require('async');
 
+//Redirect all clients who don't have a session
 router.use( '/', function(req, res, next){
-    console.log("Middle ware called");
-    next();
+    if( req.session.username ){
+        next();
+    }else{
+        res.redirect('/auth/Signin');
+    }
 });
 
 /// BOOK ROUTES ///
