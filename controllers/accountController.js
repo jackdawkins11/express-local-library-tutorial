@@ -21,8 +21,8 @@ exports.sign_in_post = function (req, res, next) {
             res.render('sign_in', { username: username, errors: [{ msg: "There was an error." }] });
         } else {
             if (results.user_count == 1) {
-                //req.session.username = username;
-                res.send('You are signed in');
+                req.session.username = username;
+                res.redirect('/catalog');
             } else {
                 res.render('sign_in', { username: username, errors: [{ msg: "Couldn't find an account associated with that username and password" }] });
             }
@@ -80,7 +80,7 @@ exports.sign_up_post = [
                 if( userExists ){
                     res.render('sign_up', { username: username, errors: [{ msg: "That username is taken." }] });
                 }else{
-                    res.render('sign_in', { username: username });
+                    res.redirect('/Signin');
                 }
             }
         });

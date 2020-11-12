@@ -6,6 +6,12 @@ var book_controller = require('../controllers/bookController');
 var author_controller = require('../controllers/authorController');
 var genre_controller = require('../controllers/genreController');
 var book_instance_controller = require('../controllers/bookinstanceController');
+const { nextTick } = require('async');
+
+router.use( '/', function(req, res, next){
+    console.log("Middle ware called");
+    next();
+});
 
 /// BOOK ROUTES ///
 

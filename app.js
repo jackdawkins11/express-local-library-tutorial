@@ -29,6 +29,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var session = require('express-session');
+app.use(session({ 
+	secret: 'Your_Secret_Key', 
+	resave: true, 
+	saveUninitialized: true
+}));
+
 //Set up routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
