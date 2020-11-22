@@ -8,7 +8,7 @@ The website is currently running on AWS and can be found at this link http://18.
 ## Features
 
 * User accounts
-* CRUD operations on the books, instances of books, authors and genres
+* CRUD operations on books, instances of books, authors and genres
 
 ## Installing
 
