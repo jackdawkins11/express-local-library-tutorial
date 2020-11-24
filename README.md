@@ -2,7 +2,7 @@
 
 This is a simple website I made for the purpose of learning the express framework for NodeJS and Mongoose. I started this project by doing [this tutorial](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Tutorial_local_library_website) on the Mozilla Developer Network. A substantial amount of the code (about 50%) is copied directly from that tutorial.
 
-The website is currently running on AWS and can be found at this link http://18.189.13.31:3000/.
+The website is currently running on AWS and can be found at this link http://52.15.174.58:3000/
 
 
 ## Features
